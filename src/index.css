@@ -1,1 +1,5 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+body {
+  @apply bg-linear-to-br from-blue-400 to-blue-700;
+}
