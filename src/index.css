@@ -1,5 +1,7 @@
 @import 'tailwindcss';
 
-body {
-  @apply bg-linear-to-br from-blue-400 to-blue-700;
+@layer base {
+  body {
+    @apply bg-linear-to-br from-blue-400 to-blue-700;
+  }
 }
