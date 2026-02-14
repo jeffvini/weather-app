@@ -17,15 +17,20 @@ export function WeatherMain() {
           className="size-25 fill-yellow-300 text-yellow-300"
         />
         <div className="flex flex-col">
-          <div className="flex items-start leading-none">
+          <div
+            role="term"
+            aria-label="Temperature: 25 degrees Celsius"
+            className="flex items-start leading-none"
+          >
             <data
+              aria-hidden="true"
               value="25.0"
               className="text-[clamp(1rem,13vw,4rem)] font-bold text-white"
             >
               25,0
             </data>
             <span
-              aria-label="degrees Celsius"
+              aria-hidden="true"
               className="text-[clamp(1rem,4vw+1rem,3rem)] leading-none font-bold text-white"
             >
               °C
