@@ -1,13 +1,26 @@
 import { useState } from 'react';
+
 import { MapPin } from 'lucide-react';
 import { X } from 'lucide-react';
 import { Search } from 'lucide-react';
 
-export function SearchBar() {
+interface SearchBarProps {
+  onSubmit: (cityName: string) => void;
+  isLoading: boolean;
+}
+
+export function SearchBar({ onSubmit, isLoading }: SearchBarProps) {
   const [city, setCity] = useState<string>('');
   return (
     <form
       role="search"
+      onSubmit={(e) => {
+        e.preventDefault();
+        if (city.trim().length > 0 && !isLoading) {
+          onSubmit(city.trim());
+          setCity('');
+        }
+      }}
       className="flex items-center gap-2 rounded-xl p-2 shadow-[0_0_3px_1px_rgba(0,0,0,0.2)] focus-within:ring-1 focus-within:ring-gray-600"
     >
       <MapPin className="fill-gray-700 text-white" />
