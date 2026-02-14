@@ -1,8 +1,10 @@
+import { useState } from 'react';
 import { MapPin } from 'lucide-react';
 import { X } from 'lucide-react';
 import { Search } from 'lucide-react';
 
 export function SearchBar() {
+  const [city, setCity] = useState<string>('');
   return (
     <form
       role="search"
@@ -11,6 +13,8 @@ export function SearchBar() {
       <MapPin className="fill-gray-700 text-white" />
       <input
         type="text"
+        value={city}
+        onChange={(e) => setCity(e.target.value)}
         aria-label="Search city"
         placeholder="Search city..."
         className="min-w-0 flex-1 bg-transparent py-1 outline-0"
