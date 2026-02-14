@@ -19,9 +19,16 @@ export function SearchBar() {
         placeholder="Search city..."
         className="min-w-0 flex-1 bg-transparent py-1 outline-0"
       />
-      <button type="button" aria-label="Clear search input" className="p-1">
-        <X className="text-gray-500" />
-      </button>
+      {city.length > 0 && (
+        <button
+          type="button"
+          onClick={() => setCity('')}
+          aria-label="Clear search input"
+          className="p-1"
+        >
+          <X className="text-gray-500" />
+        </button>
+      )}
       <button type="submit" aria-label="Submit search" className="p-1">
         <Search className="text-gray-500" />
       </button>
