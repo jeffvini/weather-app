@@ -23,9 +23,13 @@ export function WeatherInfo() {
             </abbr>
           </dt>
           <dd>
-            <data value="25.6" className="flex items-start gap-1">
-              <span>25,6</span>
-              <span aria-label="degrees Celsius" className="text-[0.8rem]">
+            <data
+              value="25.6"
+              aria-label="25.6 degrees Celsius"
+              className="flex items-start gap-1"
+            >
+              <span aria-hidden="true">25,6</span>
+              <span aria-hidden="true" className="text-[0.8rem]">
                 °C
               </span>
             </data>
@@ -44,9 +48,13 @@ export function WeatherInfo() {
             </abbr>
           </dt>
           <dd>
-            <data value="24.7" className="flex items-start gap-1">
-              <span>24,7</span>
-              <span aria-label="degrees Celsius" className="text-[0.8rem]">
+            <data
+              value="24.7"
+              aria-label="24.7 degrees Celsius"
+              className="flex items-start gap-1"
+            >
+              <span aria-hidden="true">24,7</span>
+              <span aria-hidden="true" className="text-[0.8rem]">
                 °C
               </span>
             </data>
