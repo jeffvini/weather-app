@@ -12,16 +12,19 @@ interface SearchBarProps {
 
 export function SearchBar({ onSubmit, isLoading }: SearchBarProps) {
   const [city, setCity] = useState<string>('');
+
+  const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>): void => {
+    e.preventDefault();
+    if (city.trim().length > 0 && !isLoading) {
+      onSubmit(city.trim());
+      setCity('');
+    }
+  };
+
   return (
     <form
       role="search"
-      onSubmit={(e) => {
-        e.preventDefault();
-        if (city.trim().length > 0 && !isLoading) {
-          onSubmit(city.trim());
-          setCity('');
-        }
-      }}
+      onSubmit={handleSubmit}
       className="flex items-center gap-2 rounded-xl p-2 shadow-[0_0_3px_1px_rgba(0,0,0,0.2)] focus-within:ring-1 focus-within:ring-gray-600"
     >
       <MapPin className="fill-gray-700 text-white" />
