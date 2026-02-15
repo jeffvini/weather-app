@@ -1,11 +1,23 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import { SearchBar } from './SearchBar';
 import { WeatherMain } from './WeatherMain';
 import { WeatherInfo } from './WeatherInfo';
 
+interface WeatherData {
+  city: string;
+  countryCode: string;
+  weatherCode: number;
+  temp: number;
+  tempMax: number;
+  tempMin: number;
+  humidity: number;
+  windSpeed: number;
+}
+
 export function WeatherCard() {
-  const [_cityQuery, setCityQuery] = useState<string>('');
+  const [cityQuery, setCityQuery] = useState<string>('Rio de Janeiro');
+  const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const handleReceive = (city: string): void => {
