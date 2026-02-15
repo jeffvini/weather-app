@@ -1,33 +1,36 @@
-import { Sun } from 'lucide-react';
+import type { WeatherProps } from '../../interfaces/weatherProps';
 
-export function WeatherMain() {
+import { weatherCodes } from '../../utils/weatherCodes';
+
+export function WeatherMain({ weatherData }: WeatherProps) {
+  const Icon = weatherCodes[weatherData!.weatherCode].icon;
   return (
     <header className="flex flex-col gap-3">
       <h1
         id="city-name"
         className="text-center text-[clamp(1rem,6vw+1rem,2.6rem)] font-semibold"
       >
-        Rio de Janeiro, BR
+        {weatherData?.city}, {weatherData?.countryCode}
       </h1>
       <div className="flex items-center justify-center gap-8 rounded-2xl bg-linear-to-t from-blue-500 to-blue-600 p-6">
-        <Sun
+        <Icon
           aria-hidden="false"
           role="img"
-          aria-label="Sunny"
-          className="size-25 fill-yellow-300 text-yellow-300"
+          aria-label={weatherCodes[weatherData!.weatherCode].label}
+          className={`size-25 ${weatherCodes[weatherData!.weatherCode].colorClass}`}
         />
         <div className="flex flex-col">
           <div
             role="term"
-            aria-label="Temperature: 25 degrees Celsius"
+            aria-label={`Temperature: ${weatherData?.temp} degrees Celsius`}
             className="flex items-start leading-none"
           >
             <data
               aria-hidden="true"
-              value="25.0"
+              value={weatherData?.temp}
               className="text-[clamp(1rem,13vw,4rem)] font-bold text-white"
             >
-              25,0
+              {weatherData?.temp}
             </data>
             <span
               aria-hidden="true"
@@ -37,7 +40,7 @@ export function WeatherMain() {
             </span>
           </div>
           <p className="mt-1 text-[clamp(1rem,6vw+1rem,1.5rem)] font-medium text-blue-50">
-            Clear sky
+            {weatherCodes[weatherData!.weatherCode].label}
           </p>
         </div>
       </div>
