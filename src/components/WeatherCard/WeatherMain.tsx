@@ -39,7 +39,10 @@ export function WeatherMain({ weatherData }: WeatherProps) {
               °C
             </span>
           </div>
-          <p className="mt-1 text-[clamp(1rem,6vw+1rem,1.5rem)] font-medium text-blue-50">
+          <p
+            aria-hidden="true"
+            className="mt-1 text-[clamp(1rem,6vw+1rem,1.5rem)] font-medium text-blue-50"
+          >
             {weatherCodes[weatherData!.weatherCode].label}
           </p>
         </div>
