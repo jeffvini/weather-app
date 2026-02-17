@@ -1,3 +1,5 @@
+import type { WeatherProps } from '../../interfaces/weatherProps';
+
 import {
   ThermometerSun,
   ThermometerSnowflake,
@@ -5,7 +7,7 @@ import {
   Wind,
 } from 'lucide-react';
 
-export function WeatherInfo() {
+export function WeatherInfo({ weatherData }: WeatherProps) {
   return (
     <dl
       aria-label="Weather details"
@@ -24,11 +26,11 @@ export function WeatherInfo() {
           </dt>
           <dd>
             <data
-              value="25.6"
-              aria-label="25.6 degrees Celsius"
+              value={weatherData?.tempMax}
+              aria-label={`${weatherData?.tempMax} degrees Celsius`}
               className="flex items-start gap-1"
             >
-              <span aria-hidden="true">25,6</span>
+              <span aria-hidden="true">{weatherData?.tempMax}</span>
               <span aria-hidden="true" className="text-[0.8rem]">
                 °C
               </span>
@@ -49,11 +51,11 @@ export function WeatherInfo() {
           </dt>
           <dd>
             <data
-              value="24.7"
-              aria-label="24.7 degrees Celsius"
+              value={weatherData?.tempMin}
+              aria-label={`${weatherData?.tempMin} degrees Celsius`}
               className="flex items-start gap-1"
             >
-              <span aria-hidden="true">24,7</span>
+              <span aria-hidden="true">{weatherData?.tempMin}</span>
               <span aria-hidden="true" className="text-[0.8rem]">
                 °C
               </span>
@@ -68,7 +70,7 @@ export function WeatherInfo() {
             <span className="font-medium">Humidity</span>
           </dt>
           <dd>
-            <data value="57">57%</data>
+            <data value={weatherData?.humidity}>{weatherData?.humidity}%</data>
           </dd>
         </div>
       </div>
@@ -79,8 +81,11 @@ export function WeatherInfo() {
             <span className="font-medium">Wind</span>
           </dt>
           <dd>
-            <data value="12" aria-label="12 kilometers per hour">
-              12 km/h
+            <data
+              value={weatherData?.windSpeed}
+              aria-label={`${weatherData?.windSpeed} kilometers per hour`}
+            >
+              {weatherData?.windSpeed} km/h
             </data>
           </dd>
         </div>
