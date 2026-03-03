@@ -1,39 +1,40 @@
-> 🇺🇸 [English version available here](./README.md)
+[Read the English version here](./README.md)
 
-# 🌤️ SkyCast - Aplicativo de Previsão do Tempo Global
+# 🌤️ Weather App - React + TypeScript
 
-Um painel de previsão do tempo moderno e responsivo, criado para fornecer dados meteorológicos em tempo real para qualquer cidade do mundo. Este projeto foi desenvolvido como um mergulho profundo no ecossistema React, com foco em gerenciamento de estado robusto e integração perfeita com serviços externos.
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![TypeScript](https://img.shields.io/badge/typescript-%23007acc.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Axios](https://img.shields.io/badge/axios-671ddf?style=for-the-badge&logo=axios&logoColor=white)
+![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
+![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
 
-## 🎯 Objetivo do Projeto
+Um dashboard de clima moderno e de alta performance, desenvolvido para fornecer dados meteorológicos em tempo real para qualquer cidade do mundo utilizando **React 19** e **Tailwind CSS v4**.
 
-O objetivo principal deste aplicativo é consolidar conceitos avançados de front-end, especificamente:
+## 🔗 Demonstração ao Vivo
 
-- **Gerenciamento de Estado com React:** Lidar com estados complexos da interface do usuário (carregamento, erro e dados) usando hooks como `useState`.
+Confira o projeto em produção: [https://jeff-weather-app.vercel.app/](https://jeff-weather-app.vercel.app)
 
-- **Sincronização Externa:** Dominar operações assíncronas e sincronizar o aplicativo com a **API OpenWeatherMap**.
+## 🏗️ Arquitetura e Funcionalidades
 
-- **Segurança de Tipos:** Implementar **TypeScript** para garantir a integridade dos dados e uma melhor experiência do desenvolvedor por meio da tipagem estrita das respostas da API.
+Este projeto implementa padrões profissionais de frontend para lidar com dados externos e estados da aplicação:
 
-- **Estilo Moderno:** Aproveitando o poder do **Tailwind CSS v4** para uma interface de alto desempenho, utilitária e otimizada para dispositivos móveis.
+- **Busca Assíncrona de Dados**: Utiliza **Axios** para requisições HTTP robustas à API OpenWeatherMap, contando com tratamento de erros especializado.
+- **Orquestração de Estado**: Gerencia fluxos complexos de UI, incluindo estados de Carregamento (Loading), Erro e Sucesso, garantindo uma experiência fluida mesmo em conexões lentas.
+- **Tipagem Estrita de Respostas**: Utiliza **TypeScript** para mapear as respostas complexas da API, garantindo a integridade dos dados e evitando erros em tempo de execução.
+- **Layout Responsivo**: Abordagem mobile-first utilizando o novo motor do Tailwind v4 para uma estilização ultra-rápida e adaptável.
 
-## 🚀 Tecnologias
+## 🎯 Objetivos do Projeto
 
-- **Framework:** [React 19](https://react.dev/)
-- **Ferramenta de Build:** [Vite](https://vitejs.dev/)
-- **Linguagem:** [TypeScript](https://www.typescriptlang.org/)
-- **Estilo:** [Tailwind CSS v4](https://tailwindcss.com/)
-- **API:** [OpenWeatherMap](https://openweathermap.org/api)
-- **Implantação:** [Vercel](https://vercel.com/)
+- **Integração de API**: Dominar a sincronização entre uma aplicação React e serviços REST externos.
+- **Performance**: Minimizar re-renderizações e otimizar chamadas de API.
+- **CSS Moderno**: Explorar as novas capacidades do Tailwind v4 para um código mais limpo e sustentável.
 
-## ⚡ Principais Recursos
+## 🎨 Créditos e Inspiração
 
-- **Busca em Tempo Real:** Obtenha dados meteorológicos atuais pelo nome da cidade.
+O design visual deste projeto foi inspirado em uma vitrine de projetos da **Larissa Kich** neste [vídeo](https://www.youtube.com/watch?v=Z8nKQfyPF-M).
 
-- **Previsão para 5 dias:** Previsões meteorológicas detalhadas para os próximos dias.
-
-- **Design responsivo:** Totalmente otimizado para telas de celulares, tablets e computadores.
-
-- **Dados completos:** Exibe temperatura, umidade, velocidade do vento e sensação térmica.
+> **Nota**: Embora o design siga a inspiração visual, toda a lógica da aplicação, integração com **Axios**, arquitetura **TypeScript** e implementação em **React 19** foram desenvolvidas por mim do zero.
 
 ## 🛠️ Instalação e configuração
 
@@ -47,4 +48,4 @@ git clone https://github.com/jeffvini/weather-app.git
 
 ---
 
-Desenvolvido com ☕ por [Jefferson Vinicius](https://github.com/jeffvini) – [Conecte-se comigo no LinkedIn](https://www.linkedin.com/in/jeffvinidev)
+Desenvolvido por [Jefferson Vinicius](https://github.com/jeffvini) – [Conecte-se comigo no LinkedIn](https://www.linkedin.com/in/jeffvinidev)
